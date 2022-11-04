@@ -14,6 +14,8 @@ services:
     volumes:
       # MySQL data directory
       - ./_host-volumes/dbdata:/var/lib/mysql
+      # MySQL config directory
+      - ./_host-volumes/dbconfig:/etc/mysql/conf.d
 
   phpmyadmin:
     image: ${PHPMYADMIN_IMAGE_NAME}
