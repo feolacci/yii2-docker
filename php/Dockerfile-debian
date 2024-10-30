@@ -82,8 +82,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1 \
     PHP_USER_ID=33 \
     PHP_ENABLE_XDEBUG=0 \
     PATH=/app:/app/vendor/bin:/root/.composer/vendor/bin:$PATH \
-    TERM=linux \
-    VERSION_PRESTISSIMO_PLUGIN=^0.3.10
+    TERM=linux
 
 # Add configuration files
 COPY image-files/ /
@@ -95,15 +94,8 @@ RUN chmod 755 \
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- \
-        --version=1.10.16 \
         --filename=composer.phar \
         --install-dir=/usr/local/bin && \
-    composer clear-cache
-
-# Install composer plugins
-RUN composer global require --optimize-autoloader \
-        "hirak/prestissimo:${VERSION_PRESTISSIMO_PLUGIN}" && \
-    composer global dumpautoload --optimize && \
     composer clear-cache
 
 # Enable mod_rewrite for images with apache
