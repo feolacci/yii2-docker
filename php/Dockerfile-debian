@@ -81,7 +81,7 @@ RUN printf "\n" | pecl install \
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     PHP_USER_ID=33 \
     PHP_ENABLE_XDEBUG=0 \
-    PATH=/app:/app/vendor/bin:/root/.composer/vendor/bin:$PATH \
+    PATH=/app:/app/app:/app/app/vendor/bin:/root/.composer/vendor/bin:$PATH \
     TERM=linux
 
 # Add configuration files
