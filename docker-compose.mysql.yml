@@ -16,14 +16,3 @@ services:
       - ./_host-volumes/dbdata:/var/lib/mysql
       # MySQL config directory
       - ./_host-volumes/dbconfig:/etc/mysql/conf.d
-
-  phpmyadmin:
-    image: ${PHPMYADMIN_IMAGE_NAME}
-    container_name: phpmyadmin
-    ports:
-      - '8888:80'
-    environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=${MYSQL_HOST}
-    depends_on:
-      - mysql

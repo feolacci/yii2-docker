@@ -18,9 +18,4 @@ _host-volumes/yii-project/.vscode/*
 !_host-volumes/yii-project/.vscode/launch.json
 !_host-volumes/yii-project/.vscode/settings.json
 
-!_host-volumes/yii-project/app
-
-_host-volumes/yii-project/app/*
-!_host-volumes/yii-project/app/.gitkeep
-
 \.idea/
